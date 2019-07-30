@@ -14,6 +14,6 @@
     <item
         android:id="@+id/navigation_hometask"
         android:icon="@drawable/ic_bn_tasks"
-        android:title="@string/menu_tools" />
+        android:title="@string/your_hometask" />
 
 </menu>

@@ -22,7 +22,7 @@ public interface HometaskDao {
     long insert(Hometask hometask);
 
     /**
-     * обновдение дз
+     * обновление дз
      * @param hometask домашнее задание
      * @return количество обновлённых записей
      */

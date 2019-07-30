@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:id="@+id/textHometask"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -14,7 +14,6 @@
         android:layout_marginEnd="17dp"
         android:layout_marginStart="17dp"
         android:fontFamily="Roboto"
-        android:text="Making a presentation"
         android:textColor="@color/colorTextFragment"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"

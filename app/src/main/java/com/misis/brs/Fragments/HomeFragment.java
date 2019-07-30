@@ -3,6 +3,7 @@ package com.misis.brs.Fragments;
 import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import com.misis.brs.Database.DBHelper;
 import com.misis.brs.Database.Mark;
 import com.misis.brs.MainActivity;
 import com.misis.brs.R;
+
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
@@ -93,6 +96,16 @@ public class HomeFragment extends Fragment {
                sum+=marks[i].getMark();
             }
         }
-        score.setText("TOTAL SCORE\n" + sum + "/100");
+        //переводим на русский
+        String lang = Locale.getDefault().getDisplayLanguage();
+        switch (lang){
+            case "English":
+                score.setText("TOTAL SCORE\n" + sum + "/100");
+                break;
+            case "русский":
+                score.setText("СУММА БАЛЛОВ\n" + sum + "/100");
+                break;
+        }
+
     }
 }

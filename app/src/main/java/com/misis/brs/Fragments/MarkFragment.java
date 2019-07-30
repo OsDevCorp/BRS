@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ import com.shawnlin.numberpicker.NumberPicker;
 import java.util.Arrays;
 import java.util.Vector;
 
-public class MarksFragment extends Fragment {
+public class MarkFragment extends Fragment {
 
     private NumberPicker markPicker;
     private NumberPicker maxMarkPicker;
@@ -53,7 +52,7 @@ public class MarksFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_points,container,false);
+        View view = inflater.inflate(R.layout.fragment_points,container,false);
         markTypeSpinner = (Spinner)getActivity().findViewById(R.id.semester_picker);
 
         pointsList = (ListView) view.findViewById(R.id.points_list);
@@ -226,7 +225,7 @@ public class MarksFragment extends Fragment {
                 {
                     final Snackbar notificationSnackbar = Snackbar.make(
                             v,
-                            "Mark can not be higher than the maximum.",
+                            R.string.snackbarHigherMax,
                             Snackbar.LENGTH_SHORT
                     );
                     notificationSnackbar.show();
@@ -247,21 +246,20 @@ public class MarksFragment extends Fragment {
                 switch (returned){
                     case 0:
                         DBHelper.insertMark(addingMark);
-                        Log.d("Success","add");
                         description.setText("");
                         break;
                     case 1:
                         final Snackbar notificationSnackbar = Snackbar.make(
-                                view,
-                                "Limit exceeded the number of evaluations of this type.",
+                                v,
+                                R.string.snackbarLimitCount,
                                 Snackbar.LENGTH_LONG
                         );
                         notificationSnackbar.show();
                         break;
                     case 2:
                         final Snackbar notificationSnackbar1 = Snackbar.make(
-                                view,
-                                "Limit for the number of points for this type of assessment.",
+                                v,
+                                R.string.snackbarLimitPoints,
                                 Snackbar.LENGTH_LONG
                         );
                         notificationSnackbar1.show();
@@ -287,7 +285,7 @@ public class MarksFragment extends Fragment {
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 //создаём диалог
                 builder = new AlertDialog.Builder(getActivity());//необходим именно этот метод другой вариант взятия контекста не работает
-                builder.setTitle(R.string.title);
+                builder.setTitle(R.string.pointDialogTitle);
                 builder.setMessage(R.string.message);
                 //удаляем запись
                 builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {

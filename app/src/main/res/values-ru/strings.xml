@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">БРС</string>
+    <string name="side_menu_news">Новости</string>
+    <string name="side_menu_contacts">Контакты</string>
+    <string name="side_menu_bug_report">Oтчет об ошибке</string>
+    <string name="side_menu_help">Помощь</string>
+    <string name="side_menu_settings">Настройки</string>
+    <string name="teacher">Учитель:</string>
+    <string name="schedule">Расписание:</string>
+    <string name="read_more">Целиком</string>
+    <string name="email">english@misis.ru</string>
+    <string name="phone">+7(916)927-73-05</string>
+    <string name="join">Присоединяйтесь в Instagram!</string>
+    <string name="instagram">\@kafedra_iyakt</string>
+    <string name="save">СОХРАНИТЬ</string>
+    <string name="turn_on_notifications">Включить уведомления</string>
+    <string name="appropriate_time">Время уведомления</string>
+    <string name="ok">OK</string>
+    <string name="maximum_points">Максимальный балл</string>
+    <string name="description">Описание</string>
+    <string name="add_points">Добавить баллы</string>
+    <string name="pointDialogTitle">Удаление баллов...</string>
+    <string name="hometaskDialogTitle">Удаление домашнего задания...</string>
+    <string name="hometaskEditDialogTitle">Изменение домашнего задания...</string>
+    <string name="messageEdit">Подтвердить изменение?</string>
+    
+    <string-array name="language_list">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="semesters_list">
+        <item>1ый семестр</item>
+        <item>2ой семестр</item>
+        <item>3ий семестр</item>
+        <item>4ый семестр</item>
+        <item>5ый семестр</item>
+        <item>6ой семестр</item>
+        <item>7ой семестр</item>
+        <item>8ой семестр</item>
+        <item>9ый семестр</item>
+        <item>10ый семестр</item>
+    </string-array>
+
+    <string-array name="types_of_marks_list_even">
+        <item>Работа в классе(Сен-Окт)</item>
+        <item>Работа в классе(Нов-Дек)</item>
+        <item>Платформа(Сен-Окт)</item>
+        <item>Платформа(Нов-Дек)</item>
+        <item>Проект(Класс)</item>
+        <item>Проект(Платформа)</item>
+        <item>Промежуточный тест</item>
+        <item>Финальный тест</item>
+    </string-array>
+
+    <string-array name="types_of_marks_list_odd">
+        <item>Работа в классе(Феб-Мар)</item>
+        <item>Работа в классе(Апр-Май)</item>
+        <item>Платформа(Феб-Мар)</item>
+        <item>Платформа(Апр-Май)</item>
+        <item>Проект(Класс)</item>
+        <item>Проект(Платформа)</item>
+        <item>Промежуточный тест</item>
+        <item>Финальный тест</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Открыть боковое меню</string>
+    <string name="navigation_drawer_close">Закрыть боковое меню</string>
+
+    <string name="news_toolbar">НОВОСТИ</string>
+    <string name="contacts_toolbar">КОНТАКРЫ</string>
+    <string name="settings_toolbar">НАСТРОЙКИ</string>
+    <string name="message">Подтвердить удаление?</string>
+    <string name="accept">Да</string>
+    <string name="reject">Нет</string>
+
+    <string name="your_points">Ваши баллы</string>
+    <string name="menu_home">Домашняя страница</string>
+    <string name="your_hometask">Домашние задания</string>
+    <string name="selected_language">Выбранный язык</string>
+    <string name="notifications">Уведомления</string>
+
+    <string name="snackbarHigherMax">Оценка не может быть больше максимальной.</string>
+    <string name="snackbarLimitCount">Привышен лимит количества оценок этого типа</string>
+    <string name="snackbarLimitPoints">Привышен лимит количества баллов этого типа</string>
+    <string name="snackbarEmptyText">Домашнее задание пусто</string>
+</resources>
+

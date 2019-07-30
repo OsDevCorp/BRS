@@ -16,12 +16,18 @@
     <string name="turn_on_notifications">Turn on notifications</string>
     <string name="appropriate_time">Appropriate time</string>
     <string name="ok">OK</string>
-    <string name="your_points">Your points</string>
     <string name="maximum_points">Maximum points</string>
     <string name="description">Description</string>
     <string name="add_points">Add points</string>
-    <string name="title">Deleting points...</string>
+    <string name="pointDialogTitle">Deleting points...</string>
+    <string name="hometaskDialogTitle">Deleting hometask...</string>
+    <string name="hometaskEditDialogTitle">Editing hometask...</string>
+    <string name="messageEdit">Confirm edit?</string>
 
+    <string-array name="language_list">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
 
     <string-array name="semesters_list">
         <item>1st semester</item>
@@ -63,22 +69,19 @@
 
     <string name="news_toolbar">NEWS</string>
     <string name="contacts_toolbar">CONTACTS</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="settings_toolbar">SETTINGS</string>
     <string name="message">Confirm delete?</string>
     <string name="accept">Yes</string>
     <string name="reject">No</string>
-
+    <string name="your_points">Your points</string>
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="your_hometask">Tools</string>
+    <string name="selected_language">Selected language</string>
+    <string name="notifications">Notifications</string>
 
-
-
+    <string name="snackbarHigherMax">Mark can not be higher than the maximum.</string>
+    <string name="snackbarLimitCount">Limit exceeded the number of evaluations of this type.</string>
+    <string name="snackbarLimitPoints">Limit for the number of points for this type of assessment.</string>
+    <string name="snackbarEmptyText">Hometask is empty</string>
 </resources>
 

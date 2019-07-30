@@ -26,20 +26,22 @@ import android.widget.Toast;
 import com.misis.brs.Database.DBHelper;
 import com.misis.brs.Fragments.ContactsFragment;
 import com.misis.brs.Fragments.HomeFragment;
-import com.misis.brs.Fragments.HometasksFragment;
-import com.misis.brs.Fragments.MarksFragment;
+import com.misis.brs.Fragments.HometaskFragment;
+import com.misis.brs.Fragments.MarkFragment ;
 import com.misis.brs.Fragments.NewsFragment;
 import com.misis.brs.Fragments.NewsViewFragment;
+import com.misis.brs.Fragments.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ContactsFragment contactsFragment;
     private HomeFragment homeFragment;
-    private HometasksFragment hometasksFragment;
-    private MarksFragment marksFragment;
+    private HometaskFragment hometaskFragment;
+    private MarkFragment  marksFragment;
     private NewsFragment newsFragment;
     private NewsViewFragment newsViewFragment;
+    private SettingsFragment settingsFragment;
 
     private ImageButton ibDropdown;
 
@@ -96,10 +98,11 @@ public class MainActivity extends AppCompatActivity
         //инициализируем фрагменты
         contactsFragment = new ContactsFragment();
         homeFragment = new HomeFragment();
-        hometasksFragment = new HometasksFragment();
-        marksFragment = new MarksFragment();
+        hometaskFragment = new HometaskFragment();
+        marksFragment = new MarkFragment ();
         newsFragment = new NewsFragment();
         newsViewFragment = new NewsViewFragment();
+        settingsFragment = new SettingsFragment();
 
         //нижнее меню
         llFirstLabel = findViewById(R.id.llMenuFirstLabel);
@@ -119,7 +122,7 @@ public class MainActivity extends AppCompatActivity
                         bottomMenuStick(2);
                         return true;
                     case R.id.navigation_hometask:
-                        replaceFragment(R.id.themaincontainer,hometasksFragment);
+                        replaceFragment(R.id.themaincontainer,hometaskFragment);
                         bottomMenuStick(3);
                         return true;
                 }
@@ -172,7 +175,7 @@ public class MainActivity extends AppCompatActivity
                     //
                     break;
                 case R.id.Settings:
-                    //
+                    replaceFragment(R.id.themaincontainer,settingsFragment);
                     break;
             }
 

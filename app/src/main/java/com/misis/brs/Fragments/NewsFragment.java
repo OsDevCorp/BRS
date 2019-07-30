@@ -4,9 +4,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,19 +11,17 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.misis.brs.Adapters.NewsViewAdapter;
 import com.misis.brs.Database.News;
 import com.misis.brs.MainActivity;
 import com.misis.brs.R;
-import com.misis.brs.TimeHelper;
 
 import java.util.Vector;
 
 public class NewsFragment extends Fragment {
 
-    NewsViewAdapter newsViewAdapter;
+    private NewsViewAdapter newsViewAdapter;
     private ListView listView;
     private Vector<News> news;
 
@@ -54,15 +49,14 @@ public class NewsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                NewsFragment newsFragment = new NewsFragment();
-                Toast.makeText( getActivity().getApplicationContext(),"go",Toast.LENGTH_LONG).show();
+                NewsViewFragment newsViewFragment = new NewsViewFragment();
                 Bundle args = new Bundle();
                 args.putString("title",news.elementAt(position).getHeader());
-                args.putString("date", TimeHelper.getTime(news.elementAt(position).getDateNews()));
+                args.putLong("date", news.elementAt(position).getDateNews());
                 args.putString("text",news.elementAt(position).getDescription());
-                newsFragment.setArguments(args);
+                newsViewFragment.setArguments(args);
 
-                ((MainActivity) getActivity()).replaceFragment(R.id.themaincontainer,newsFragment);
+                ((MainActivity) getActivity()).replaceFragment(R.id.themaincontainer,newsViewFragment);
             }
         });
         return view;
