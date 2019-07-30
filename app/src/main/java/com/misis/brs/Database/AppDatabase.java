@@ -1,7 +1,7 @@
 package com.misis.brs.Database;
 
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Database;
+import androidx.room.RoomDatabase;
 
 /**
  * Основной класс базы данных, содержит перечень всех Dao

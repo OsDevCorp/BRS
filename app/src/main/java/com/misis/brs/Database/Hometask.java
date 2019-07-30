@@ -1,7 +1,7 @@
 package com.misis.brs.Database;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 /**
  * класс описываюший сущность домашнего задания.

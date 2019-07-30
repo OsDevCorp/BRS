@@ -1,10 +1,10 @@
 package com.misis.brs.Database;
 
-import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.OnConflictStrategy;
-import android.arch.persistence.room.Query;
-import android.arch.persistence.room.Update;
+import androidx.room.Dao;
+import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
+import androidx.room.Query;
+import androidx.room.Update;
 
 /**
  * список всех возможных запросов к DB для объекта Hometask
@@ -22,7 +22,7 @@ public interface HometaskDao {
     long insert(Hometask hometask);
 
     /**
-     * обновдение дз
+     * обновление дз
      * @param hometask домашнее задание
      * @return количество обновлённых записей
      */

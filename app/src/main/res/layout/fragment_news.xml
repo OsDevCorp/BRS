@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView
+<ListView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/news_list"
+    android:dividerHeight="@dimen/divider_height"
     android:scrollbars="vertical"
+    android:layout_marginTop="@dimen/divider_height"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     />

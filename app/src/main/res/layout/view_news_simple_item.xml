@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -60,9 +60,7 @@
                android:layout_marginTop="12dp"
                android:fontFamily="Roboto"
                android:textSize="14sp"
-               android:textColor="@color/colorTextFragment"
-               android:text="I don't know if anybody has come across this problem but when we are in FS00 and we click on the little box beside the GL account # to look up a number we have found that if you enter an * and then number and * again in GL Long Text it will not find it. IE *703*. We have none GL number number descriptions for our internal enties but we can find them using the search tool. Anybody know why they GL Long Text does not recognize numbers? I looked in sap notes and could not find anything."
-               />
+               android:textColor="@color/colorTextFragment" />
 
            <TextView
                android:layout_width="match_parent"
@@ -76,4 +74,4 @@
                android:text="@string/read_more"/>
 
    </LinearLayout>
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

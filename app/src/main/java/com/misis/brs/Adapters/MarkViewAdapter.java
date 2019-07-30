@@ -1,119 +1,97 @@
 package com.misis.brs.Adapters;
 
-
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.misis.brs.Database.Mark;
 import com.misis.brs.R;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Locale;
+import java.util.Vector;
 
-/**
- *  Класс предназначен для отображения списка Recycle View
- *  Используется для связи графических компонентов и данных
- *  Реализует механизм переиспользования компонентов для оптимизации
- */
-public class MarkViewAdapter extends RecyclerView.Adapter<MarkViewAdapter.MarkViewHolder> {
-    private List<Mark> marksList = new ArrayList<>();
+public class MarkViewAdapter extends BaseAdapter{
 
-    /**
-     * Метод для добавления оценок в список для отображения в Recycle View
-     * @param marks массив оценок для добавления их в спиоск
-     */
-    public void setItems(Mark[] marks){
-        marksList.addAll(Arrays.asList(marks));
-        notifyDataSetChanged();
+    private Context context;
+    private static Vector<Mark> marks;
+
+    public MarkViewAdapter(Context context, Vector<Mark> marks)
+    {
+        this.context = context;
+        this.marks = marks;
+
     }
 
-    public void setItems(Mark mark){
-        marksList.add(0,mark);
-        notifyItemInserted(0);
-    }
-
-    /**
-     * Метод для удаления оценок из списока для отображения в Recycle View
-     */
-    public void deleteItems(){
-        marksList.clear();
-        notifyDataSetChanged();
-    }
-
-    public void deleteItems(Mark mark){
-        marksList.remove(mark);
-        notifyDataSetChanged();
-    }
-
-    /**
-     * Вызывается при создании ViewHolder
-     * Создаёт на основе разметки графическое представление эдемента
-     * @return MarkViewHolder
-     */
-    @NonNull
-    @Override
-    public MarkViewAdapter.MarkViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.view_mark_simple_item, viewGroup, false);
-        return new MarkViewHolder(view);
-    }
-
-    /**
-     * Связывает данные с их графмческим представлением
-     */
-    @Override
-    public void onBindViewHolder(@NonNull MarkViewAdapter.MarkViewHolder viewHolder, int i) {
-       viewHolder.bind(marksList.get(i));
-    }
-
-    /**
-     * Нужен для подсчёта количества элементов
-     * @return количество элементов в списке
-     */
-    @Override
-    public int getItemCount() {
-        return marksList.size();
+    public static void setMarks(Vector<Mark> marks) {
+        MarkViewAdapter.marks = marks;
     }
 
     @Override
-    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
+    public int getCount() {
+        return marks.size();
     }
 
-    /**
-     * Класс используется для хранения связок между данными и отображением
-     * Позволяет переиспользовать отображения
-     * Экономит количество вызовов дорогих по времени операцмй
-     */
-    public static class MarkViewHolder extends RecyclerView.ViewHolder{
-        private TextView mark;
-        private TextView description;
-        private TextView markType;
+    @Override
+    public Object getItem(int position) {
+        return marks.get(position);
+    }
 
-        /**
-         * конструктор в котором мы ищем отображение для данных
-         * @param itemView элемент отображения с которым мы связываемся
-         */
-        public MarkViewHolder(@NonNull View itemView) {
-            super(itemView);
-            mark = (TextView) itemView.findViewById(R.id.mark);
-            description = (TextView) itemView.findViewById(R.id.description);
-            markType = (TextView) itemView.findViewById(R.id.markType);
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.view_mark_simple_item, null);
+
+        //переводим на русский
+        TextView type = (TextView) view.findViewById(R.id.markType);
+        String lang = Locale.getDefault().getDisplayLanguage();
+        switch (lang){
+            case "English":
+                type.setText(marks.get(position).getMarkType().name());
+                break;
+            case "русский":
+
+                switch (marks.get(position).getMarkType()){
+                    case CLASS_PARTICIPATION_PART_1:
+                        type.setText("Работа в классе(часть 1)");
+                        break;
+                    case CLASS_PARTICIPATION_PART_2:
+                        type.setText("Работа в классе(часть 2)");
+                        break;
+                    case ONLINE_PART_1:
+                        type.setText("Платформа(часть 1)");
+                        break;
+                    case ONLINE_PART_2:
+                        type.setText("Платформа(часть 2)");
+                        break;
+                    case PROJECT_PART_1:
+                        type.setText("Проект(Класс)");
+                        break;
+                    case PROJECT_PART_2:
+                        type.setText("Проект(Платформа)");
+                        break;
+                    case MIDTERM:
+                        type.setText("Промежуточный тест");
+                        break;
+                    case FINAL_TEST:
+                        type.setText("Финальный тест");
+                        break;
+                }
+
+                break;
         }
+        ((TextView) view.findViewById(R.id.description)).setText(marks.get(position).getDescription());
 
-        /**
-         * Связывает данные с их графмческим представлением
-         */
-        public void bind(Mark mark){
-            String markText = mark.getMark() + "/" + mark.getMaxMark();
-            this.mark.setText(markText);
-            this.description.setText(mark.getDescription());
-            this.markType.setText(mark.getMarkType().name());
-        }
+        String mark = marks.get(position).getMark() + "/" + marks.get(position).getMaxMark();
+
+        ((TextView) view.findViewById(R.id.mark)).setText(mark);
+        return view;
     }
 }

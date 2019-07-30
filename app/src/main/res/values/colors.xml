@@ -5,14 +5,14 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="colorActivityBackground">#FFF</color>
-    <color name="colorBottomMenuBackground">#256D8F</color>
+    <color name="colorBottomMenuBackground">#00ADEE</color>
     <color name="colorItemBottomMenuBackground">#FFF</color>
 
-    <color name="colorSideHeaderBackground">#9C3844</color>
-    <color name="colorTopBarBackground">#256D8F</color>
+    <color name="colorSideHeaderBackground">#D75332</color>
+    <color name="colorTopBarBackground">#00ADEE</color>
 
     <color name="colorToolBarText">#FFF</color>
-    <color name="colorPopupSpinnerBackground">#ADCEDD</color>
+    <color name="colorPopupSpinnerBackground">#AAE1FA</color>
     <color name="colorPopupSpinnerText">#FFF</color>
     <color name="colorExtraInfoBackground">#EEEEEE</color>
     <color name="colorTextExtraInfo">#000</color>
@@ -21,26 +21,30 @@
     <color name="colorStudentsGroup">#DAD9D9</color>
     <color name="colorTextFragment">#000</color>
     
-    <color name="colorNewsBackground">#F2FBFF</color>
-    <color name="colorTextTitleNews">#1E5A75</color>
-    <color name="colorDateNews">#C4C4C4</color>
+    <color name="colorNewsBackground">#E7E7E8</color>
+    <color name="colorTextTitleNews">#0175BB</color>
+    <color name="colorDateNews">#979797</color>
     <color name="colorTextReadMore">#979797</color>
 
-    <color name="colorTextEmail">#1E92CA</color>
+    <color name="colorTextEmail">#00ADEE</color>
     <color name="colorPhone">#545454</color>
-    <color name="colorTextJoin">#1E5A75</color>
+    <color name="colorTextJoin">#0175BB</color>
     <color name="colorInstagram">#545454</color>
 
-    <color name="colorTaskItemBackground">#A1AEF5</color>
+    <color name="colorTaskItemBackground">#41C8F4</color>
     <color name="colorTextTask">#FFF</color>
-    <color name="colorDoneCheckBoxBackground">#1E5A75</color>
-    <color name="colorButtonAddTaskBackground">#219C81</color>
+    <color name="colorDoneCheckBoxBackground">#0175BB</color>
+    <color name="colorButtonAddTaskBackground">#63BE61</color>
 
-    <color name="colorButtonAddPointsBackground">#9C3844</color>
-    <color name="colorPointsBackground">#1E5A75</color>
+    <color name="colorButtonAddPointsBackground">#D75332</color>
+    <color name="colorPointsBackground">#0175BB</color>
     <color name="colorTextButton">#FFF</color>
     <color name="colorTextPoints">#FFF</color>
 
     <color name="gradientNumberPickerStartEnd">#80BEDB</color>
     <color name="gradientNumberPickerMiddle">#FFF</color>
+    <color name="menuLine">#f8b113</color>
+
+    <color name="chosenNumber">#436271</color>
+    <color name="number">#00ADEE</color>
 </resources>
