@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">iGrade</string>
+    <string name="side_menu_news">Новости</string>
+    <string name="side_menu_contacts">Контакты</string>
+    <string name="side_menu_bug_report">Oтчет об ошибке</string>
+    <string name="side_menu_help">Обновления</string>
+    <string name="side_menu_settings">Настройки</string>
+    <string name="student_s_name">Имя студента</string>
+    <string name="group">Группа</string>
+    <string name="teacher">Преподаватель:</string>
+    <string name="teacher1">Преподаватель</string>
+    <string name="schedule">Расписание:</string>
+    <string name="read_more">Целиком</string>
+    <string name="email">english@misis.ru</string>
+    <string name="phone">+7(916)927-73-05</string>
+    <string name="join">Присоединяйтесь в Instagram!</string>
+    <string name="instagram">\@kafedra_iyakt</string>
+    <string name="save">СОХРАНИТЬ</string>
+    <string name="turn_on_notifications">Включить уведомления</string>
+    <string name="appropriate_time">Время уведомления</string>
+    <string name="ok">OK</string>
+    <string name="maximum_points">Максимальный балл</string>
+    <string name="description">Описание</string>
+    <string name="add_points">Добавить баллы</string>
+    <string name="pointDialogTitle">Удаление баллов...</string>
+    <string name="hometaskDialogTitle">Удаление домашнего задания...</string>
+    <string name="hometaskEditDialogTitle">Изменение домашнего задания...</string>
+    <string name="messageEdit">Подтвердить изменение?</string>
+    
+    <string-array name="language_list">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="semesters_list">
+        <item>1 семестр</item>
+        <item>2 семестр</item>
+        <item>3 семестр</item>
+        <item>4 семестр</item>
+        <item>5 семестр</item>
+        <item>6 семестр</item>
+        <item>7 семестр</item>
+        <item>8 семестр</item>
+        <item>9 семестр</item>
+        <item>10 семестр</item>
+    </string-array>
+
+    <string-array name="types_of_marks_list_even">
+        <item>Работа в классе(Сен-Окт)</item>
+        <item>Работа в классе(Нов-Дек)</item>
+        <item>Платформа(Сен-Окт)</item>
+        <item>Платформа(Нов-Дек)</item>
+        <item>Проект(Класс)</item>
+        <item>Проект(Платформа)</item>
+        <item>Промежуточный тест</item>
+        <item>Финальный тест</item>
+    </string-array>
+
+    <string-array name="types_of_marks_list_odd">
+        <item>Работа в классе(Феб-Мар)</item>
+        <item>Работа в классе(Апр-Май)</item>
+        <item>Платформа(Феб-Мар)</item>
+        <item>Платформа(Апр-Май)</item>
+        <item>Проект(Класс)</item>
+        <item>Проект(Платформа)</item>
+        <item>Промежуточный тест</item>
+        <item>Финальный тест</item>
+    </string-array>
+
+    <string-array name="days_of_week">
+        <item>Пн</item>
+        <item>Вт</item>
+        <item>Ср</item>
+        <item>Чт</item>
+        <item>Пт</item>
+        <item>Сб</item>
+        <item>Вс</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Открыть боковое меню</string>
+    <string name="navigation_drawer_close">Закрыть боковое меню</string>
+
+    <string name="news_toolbar">НОВОСТИ</string>
+    <string name="contacts_toolbar">КОНТАКТЫ</string>
+    <string name="settings_toolbar">НАСТРОЙКИ</string>
+    <string name="bug_report">ОТЧЁТ ОБ ОШИБКЕ</string>
+    <string name="message">Подтвердить удаление?</string>
+    <string name="accept">Да</string>
+    <string name="reject">Нет</string>
+
+    <string name="your_points">Ваши баллы</string>
+    <string name="menu_home">Домашняя страница</string>
+    <string name="your_hometask">Домашние задания</string>
+    <string name="selected_language">Выбранный язык</string>
+    <string name="notifications">Уведомления</string>
+
+    <string name="snackbarHigherMax">Оценка не может быть больше максимальной.</string>
+    <string name="snackbarLimitCount">Привышен лимит количества оценок этого типа</string>
+    <string name="snackbarLimitPoints">Привышен лимит количества баллов этого типа</string>
+    <string name="snackbarEmptyText">Домашнее задание пусто</string>
+    <string name="snackbarSave">Изменения сохранены</string>
+    <string name="snackbarNoOnline">Нет подключения к интернету</string>
+
+    <string name="CalendarBatton">Добавить новое задание</string>
+    <string name="side_menu_updates">ОБНОВЛЕНИЯ</string>
+    <string name="what_s_new">Что нового?</string>
+    <string name="version_history">История версий</string>
+    <string name="day_3">День 3</string>
+    <string name="day_2">День 2</string>
+    <string name="day_1">День 1</string>
+    <string name="hintSchedule">Аудитория</string>
+    <string name="hintFIO">Добавить ФИО</string>
+    <string name="hintGroup">Добавить группу</string>
+    <string name="teacherName">Иванов Иван Иванович</string>
+    <string name="scheduleExample">Понедельник 1024 \nВторник 1020A \nПятница 1024</string>
+    <string name="yourMark">Ваша оценка</string>
+
+    <string name="mark_0"><![CDATA[Оценка 0 - 0 баллов]]></string>
+    <string name="mark_2"><![CDATA[Оценка 2 – 1–50 балла]]></string>
+    <string name="mark_3"><![CDATA[Оценка 3 – 51–69 балла]]></string>
+    <string name="mark_4"><![CDATA[Оценка 4 – 70–84 балла]]></string>
+    <string name="mark_5"><![CDATA[Оценка 5 - >84 балла]]></string>
+
+    <string-array name="update_news">
+        <item>"Добавленный функционал:
+		Баллы:
+			Записи баллов для каждого семестра отдельно (на главном экране нужно выбрать интересующий семестр)
+			Выбор типа баллов и проверка корректности ввода
+			Удаление по долгому нажатию на оценку
+			Подсчёт суммы баллов и конвертация в оценку
+            Можно посмотреть критерий перевода по нажатию на лампочку
+		Домашние задания:
+			Добавление домашних заданий с выбором даты выполнения (на один день можно добавить только одно задание)
+			Редактирование и просмотр домашнего задания по короткому нажатию
+			Возможность отметить задание как выполненное
+			Удаление по долгому нажатию
+			Отображение предстаящих неотмеченных заданий при создании новой записи
+		Боковое меню:
+			Вкладка с контактами кафедры
+			Вкладка обратной связи (Мы будем рады Вашим предложениям по новой функциональности и сообщениям об ошибках или некорректной работе приложения)
+			Вкладка настроек позволяет вносить полезную информацию, которая отображается в шапке бокового меню"	</item>
+    </string-array>
+
+    <string-array name="versions">
+        <item>0.1.0</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>01.09.2019</item>
+    </string-array>
+
+</resources>
+

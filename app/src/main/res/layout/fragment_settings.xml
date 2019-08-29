@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/studName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/student_s_name"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/studNameEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/robotoregular"
+            android:hint="@string/hintFIO"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="@color/colorTextFragment"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/studName"
+            app:layout_constraintStart_toEndOf="@+id/studName"
+            app:layout_constraintTop_toTopOf="@+id/studName" />
+
+        <TextView
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/group"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/studName"
+            app:layout_constraintTop_toBottomOf="@+id/studName" />
+
+        <EditText
+            android:id="@+id/groupEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
+            android:hint="@string/hintGroup"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="@color/colorTextFragment"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/group"
+            app:layout_constraintStart_toStartOf="@+id/studNameEdit"
+            app:layout_constraintTop_toTopOf="@+id/group" />
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="86dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/teacher1"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/studName"
+            app:layout_constraintTop_toBottomOf="@+id/studName" />
+
+        <EditText
+            android:id="@+id/teacherNameEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
+            android:hint="@string/hintFIO"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="@color/colorTextFragment"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/teacherName"
+            app:layout_constraintStart_toStartOf="@+id/groupEdit"
+            app:layout_constraintTop_toTopOf="@+id/teacherName" />
+
+        <View
+            android:id="@+id/bar1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="8dp"
+            android:background="#7b7b7b"
+            app:layout_constraintBottom_toTopOf="@+id/teacherName"
+            app:layout_constraintTop_toBottomOf="@+id/schedule"
+            app:layout_constraintVertical_bias="0.486"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="156dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/schedule"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/studName"
+            app:layout_constraintTop_toBottomOf="@+id/studName" />
+
+        <TextView
+            android:id="@+id/day1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="197dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/day_1"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/studName"
+            app:layout_constraintTop_toBottomOf="@+id/studName" />
+
+        <Spinner
+            android:id="@+id/day1Spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:entries="@array/days_of_week"
+            android:popupBackground="@color/colorPopupSpinnerBackground"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/day1"
+            app:layout_constraintEnd_toStartOf="@+id/day1Edit"
+            app:layout_constraintStart_toEndOf="@+id/day1"
+            app:layout_constraintTop_toTopOf="@+id/day1" />
+
+        <EditText
+            android:id="@+id/day1Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:fontFamily="@font/robotoregular"
+            android:hint="@string/hintSchedule"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="@color/colorTextFragment"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/day1Spin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/day1Spin"
+            app:layout_constraintVertical_bias="0.473" />
+
+        <TextView
+            android:id="@+id/day2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="242dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/day_2"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/studName"
+            app:layout_constraintTop_toBottomOf="@+id/studName" />
+
+        <Spinner
+            android:id="@+id/day2Spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:entries="@array/days_of_week"
+            android:popupBackground="@color/colorPopupSpinnerBackground"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/day2"
+            app:layout_constraintEnd_toStartOf="@+id/day2Edit"
+            app:layout_constraintStart_toEndOf="@+id/day2"
+            app:layout_constraintTop_toTopOf="@+id/day2" />
+
+        <EditText
+            android:id="@+id/day2Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
+            android:hint="@string/hintSchedule"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="@color/colorTextFragment"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/day2Spin"
+            app:layout_constraintEnd_toEndOf="@+id/day1Edit"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/day1Edit"
+            app:layout_constraintTop_toTopOf="@+id/day2Spin" />
+
+        <TextView
+            android:id="@+id/day3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="287dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/day_3"
+            android:textColor="@color/colorTextFragment"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/studName"
+            app:layout_constraintTop_toBottomOf="@+id/studName" />
+
+        <Spinner
+            android:id="@+id/day3Spin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:entries="@array/days_of_week"
+            android:popupBackground="@color/colorPopupSpinnerBackground"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/day3"
+            app:layout_constraintEnd_toStartOf="@+id/day3Edit"
+            app:layout_constraintStart_toEndOf="@+id/day3"
+            app:layout_constraintTop_toTopOf="@+id/day3" />
+
+        <EditText
+            android:id="@+id/day3Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robotoregular"
+            android:hint="@string/hintSchedule"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:textColor="@color/colorTextFragment"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/day3Spin"
+            app:layout_constraintEnd_toEndOf="@+id/day2Edit"
+            app:layout_constraintHorizontal_bias="0.271"
+            app:layout_constraintStart_toStartOf="@+id/day2Edit"
+            app:layout_constraintTop_toTopOf="@+id/day3Spin" />
+
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="105dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_button"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/save"
+            android:textColor="@color/colorTextButton"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/day3Spin" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

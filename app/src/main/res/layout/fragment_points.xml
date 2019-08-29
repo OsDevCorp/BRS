@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorActivityBackground">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/robotoregular"
+        android:text="@string/your_points"
+        android:textColor="@color/colorTextFragment"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/text1"
+        app:layout_constraintStart_toStartOf="@+id/max_mark_picker"
+        app:layout_constraintTop_toTopOf="@+id/text1"
+        app:layout_constraintVertical_bias="0.6"
+        app:np_dividerColor="@color/colorPrimary"
+        app:np_fadingEdgeEnabled="false"
+        app:np_height="36dp"
+        app:np_max="10"
+        app:np_min="0"
+        app:np_order="descending"
+        app:np_orientation="horizontal"
+        app:np_selectedTextColor="@color/chosenNumber"
+        app:np_selectedTextSize="26sp"
+        app:np_textColor="@color/number"
+        app:np_textSize="20sp"
+        app:np_width="150dp"
+        app:np_wrapSelectorWheel="true" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/robotoregular"
+        android:text="@string/maximum_points"
+        android:textColor="@color/colorTextFragment"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1" />
+
+    <com.shawnlin.numberpicker.NumberPicker
+        android:id="@+id/max_mark_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text2"
+        app:layout_constraintStart_toEndOf="@+id/text2"
+        app:layout_constraintTop_toTopOf="@+id/text2"
+        app:np_dividerColor="@color/colorPrimary"
+        app:np_fadingEdgeEnabled="false"
+        app:np_height="36dp"
+        app:np_max="10"
+        app:np_min="0"
+        app:np_order="descending"
+        app:np_orientation="horizontal"
+        app:np_selectedTextColor="@color/chosenNumber"
+        app:np_selectedTextSize="26sp"
+        app:np_textColor="@color/number"
+        app:np_textSize="20sp"
+        app:np_width="150dp"
+        app:np_wrapSelectorWheel="true" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="17dp"
+        android:hint="@string/description"
+        android:inputType="textCapSentences|textAutoCorrect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2" />
+
+    <Button
+        android:id="@+id/addPoints"
+        android:layout_width="103dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_button"
+        android:text="@string/add_points"
+        android:textColor="@color/colorTextButton"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_edit_text" />
+
+    <View
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="72dp"
+        android:background="#7b7b7b"
+        app:layout_constraintTop_toBottomOf="@id/addPoints" />
+
+    <ListView
+        android:id="@+id/points_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:dividerHeight="@dimen/divider_height"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

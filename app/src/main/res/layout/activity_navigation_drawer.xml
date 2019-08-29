@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <include
+        layout="@layout/app_bar_navigation_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/selectorLine"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/colorBottomMenuBackground"
+            android:layout_above="@+id/nav_view_bottom"
+            android:orientation="horizontal"
+            android:weightSum="19"
+            android:id="@+id/selectorLine">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="5"
+                android:background="@color/menuLine"
+                android:id="@+id/llMenuFirstLabel"
+
+                android:orientation="horizontal" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="5"
+                android:background="@color/menuLine"
+                android:id="@+id/llMenuSecondLabel"
+                android:visibility="invisible"
+                android:orientation="horizontal" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="5"
+                android:background="@color/menuLine"
+                android:id="@+id/llMenuThirdLabel"
+                android:visibility="invisible"
+                android:orientation="horizontal" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="4dp"
+                android:layout_weight="1"
+                android:background="#00FFFFFF"/>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/colorBottomMenuBackground"
+            android:layout_alignParentBottom="true"
+            app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="#ffffff"
+            app:itemIconSize="36dp"
+            app:menu="@menu/bottom_nav_menu" />
+
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:visibility="gone"
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_navigation_drawer"
+        app:menu="@menu/activity_navigation_drawer_drawer"
+        />
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

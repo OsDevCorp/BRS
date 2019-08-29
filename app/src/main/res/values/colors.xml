@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#256D8F</color>
+    <color name="colorPrimaryDark">#0e2a38</color>
+    <color name="colorAccent">#63BE61</color>
+
+    <color name="colorActivityBackground">#FFF</color>
+    <color name="colorBottomMenuBackground">#00ADEE</color>
+    <color name="colorItemBottomMenuBackground">#FFF</color>
+
+    <color name="colorSideHeaderBackground">#D75332</color>
+    <color name="colorTopBarBackground">#00ADEE</color>
+
+    <color name="colorToolBarText">#FFF</color>
+    <color name="colorSpinner">#FFF</color>
+    <color name="colorPopupSpinnerBackground">#FFF</color>
+    <color name="colorPopupSpinnerText">#000</color>
+    <color name="colorExtraInfoBackground">#EEEEEE</color>
+    <color name="colorTextExtraInfo">#000</color>
+    <color name="colorTextExtraInfoUpdated">#727070</color>
+    
+    <color name="colorStudentsGroup">#DAD9D9</color>
+    <color name="colorTextFragment">#000</color>
+    
+    <color name="colorNewsBackground">#E7E7E8</color>
+    <color name="colorTextTitleNews">#0175BB</color>
+    <color name="colorDateNews">#979797</color>
+    <color name="colorTextReadMore">#979797</color>
+
+    <color name="colorTextEmail">#00ADEE</color>
+    <color name="colorPhone">#545454</color>
+    <color name="colorTextJoin">#0175BB</color>
+    <color name="colorInstagram">#545454</color>
+
+    <color name="colorTaskItemBackgroundNoCheck">#41C8F4</color>
+    <color name="colorTaskItemBackgroundCheck">#aee8fa</color>
+    <color name="colorTextTaskNoCheck">#FFF</color>
+    <color name="colorTextTaskCheck">#0175BB</color>
+    <color name="colorDoneCheckBoxBackground">#0175BB</color>
+    <color name="colorDone">#28E23B</color>
+
+    <color name="colorButtonAddTaskBackground">#63BE61</color>
+
+    <color name="colorButtonAddPointsBackground">#D75332</color>
+    <color name="colorPointsBackground">#0175BB</color>
+    <color name="colorTextButton">#FFF</color>
+    <color name="colorTextPoints">#FFF</color>
+
+    <color name="gradientNumberPickerStartEnd">#80BEDB</color>
+    <color name="gradientNumberPickerMiddle">#FFF</color>
+    <color name="menuLine">#f8b113</color>
+
+    <color name="chosenNumber">#436271</color>
+    <color name="number">#00ADEE</color>
+
+    <color name="calendarText">#7A7A7A</color>
+    <color name="calendarBackground">#41C8F4</color>
+    <color name="textNote">#FFF</color>
+
+    <color name="curTaskBackground">#AAE1FA</color>
+    <color name="curTaskBorder">#88D8F2</color>
+    <color name="colorCurTaskText">#0175BB</color>
+
+    <color name="colorLamp">#0175BB</color>
+    <color name="circleBackground">#0175BB</color>
+    <color name="ColorMark">#FFF</color>
+
+    <color name="NoteBackground">#AAE1FA</color>
+    <color name="NoteBorder">#88D8F2</color>
+    <color name="colorNoteText">#0175BB</color>
+
+    <color name="hint">#979292</color>
 </resources>
