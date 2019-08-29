@@ -163,6 +163,23 @@ public class DBHelper {
         }return null;
     }
 
+    public static Hometask[] selectUpcoming(final Long curTime){
+        AsyncTask<Long, Void, Hometask[]> task = new AsyncTask<Long, Void, Hometask[]>() {
+            @Override
+            protected Hometask[] doInBackground(Long... longs) {
+                return instance.db.hometaskDao().selectUpcoming(curTime);
+            }
+        };
+        task.execute(curTime);
+        try{
+            return task.get();
+        } catch (InterruptedException e) {
+            Log.e("selectOverdueHometask", e.toString());
+        } catch (ExecutionException e) {
+            Log.e("selectOverdueHometask", e.toString());
+        }return null;
+    }
+
     public static Hometask[] selectHometaskForSemester(final int semester){
         AsyncTask<Integer, Void, Hometask[]> task = new AsyncTask<Integer, Void, Hometask[]>() {
             @Override
@@ -171,6 +188,23 @@ public class DBHelper {
             }
         };
         task.execute(semester);
+        try{
+            return task.get();
+        } catch (InterruptedException e) {
+            Log.e("selectTaskForSemester", e.toString());
+        } catch (ExecutionException e) {
+            Log.e("selectTaskForSemester", e.toString());
+        }return null;
+    }
+
+    public static Hometask selectHometaskByDate(final long deadline){
+        AsyncTask<Long, Void, Hometask> task = new AsyncTask<Long, Void, Hometask>() {
+            @Override
+            protected Hometask doInBackground(Long... longs) {
+                return instance.db.hometaskDao().selectHometaskByDate(deadline);
+            }
+        };
+        task.execute(deadline);
         try{
             return task.get();
         } catch (InterruptedException e) {
@@ -202,11 +236,11 @@ public class DBHelper {
         task.execute(news1);
     }
 
-    public static void deleteNewsbyDateNews(final long dateNews){
+    public static void deleteNewsByDateNews(final long dateNews){
         AsyncTask<Long, Void, Void> task = new AsyncTask<Long, Void, Void>() {
             @Override
             protected Void doInBackground(Long... longs) {
-                instance.db.newsDao().deletebyDateNews(dateNews);
+                instance.db.newsDao().deleteByDateNews(dateNews);
                 return null;
             }
         };

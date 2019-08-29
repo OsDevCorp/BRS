@@ -1,6 +1,7 @@
 package com.misis.brs.Fragments;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -66,7 +68,6 @@ public class MarkFragment extends Fragment {
         markTypeSpinner.setVisibility(View.VISIBLE);
 
         //настраиваем пикеры
-        //TODO подумать почему вылетает за граници массива
         String[] numsForMaxMarkPicker = new String[20];
         String[] numsForMarkPicker = new String[21];
 
@@ -97,7 +98,7 @@ public class MarkFragment extends Fragment {
 
         //изменение spinner
         ArrayAdapter<?> adapter =
-                ArrayAdapter.createFromResource(getActivity(), markTypes, android.R.layout.simple_spinner_item);
+                ArrayAdapter.createFromResource(getActivity(), markTypes, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.view_mark_type_simple_dropdown_item);
 
         markTypeSpinner.setAdapter(adapter);
@@ -120,14 +121,14 @@ public class MarkFragment extends Fragment {
                         for(int i=0;i<numsForMarkPicker.length;i++){
                             numsForMarkPicker[i] = Integer.toString(i);
                         }
+                        markPicker.setDisplayedValues(numsForMarkPicker);
                         markPicker.setMinValue(1);
                         markPicker.setMaxValue(numsForMarkPicker.length);
-                        markPicker.setDisplayedValues(numsForMarkPicker);
                         markPicker.setValue(6);
 
+                        maxMarkPicker.setDisplayedValues(numsForMaxMarkPicker);
                         maxMarkPicker.setMinValue(1);
                         maxMarkPicker.setMaxValue(numsForMaxMarkPicker.length);
-                        maxMarkPicker.setDisplayedValues(numsForMaxMarkPicker);
                         maxMarkPicker.setValue(5);
                         break;
                     case 2:
@@ -138,9 +139,9 @@ public class MarkFragment extends Fragment {
                         numsForMarkPicker = new String[11];
                         for(int i=0;i<numsForMarkPicker.length;i++)
                             numsForMarkPicker[i]=Integer.toString(i);
+                        markPicker.setDisplayedValues(numsForMarkPicker);
                         markPicker.setMinValue(1);
                         markPicker.setMaxValue(numsForMarkPicker.length);
-                        markPicker.setDisplayedValues(numsForMarkPicker);
                         markPicker.setValue(11);
 
                         maxMarkPicker.setMinValue(1);
@@ -155,7 +156,6 @@ public class MarkFragment extends Fragment {
                         numsForMarkPicker = new String[6];
                         for(int i=0;i<numsForMarkPicker.length;i++)
                             numsForMarkPicker[i]=Integer.toString(i);
-
                         markPicker.setMinValue(1);
                         markPicker.setMaxValue(numsForMarkPicker.length);
                         markPicker.setDisplayedValues(numsForMarkPicker);
@@ -194,6 +194,10 @@ public class MarkFragment extends Fragment {
         addPoints.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //скрываем клавиатуру
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(addPoints.getWindowToken(), 0);
+
                 int markValue, maxMarkValue = 0;
                 //выявляем элемент от его позиции и типа оценки
                 markValue = markPicker.getValue()-1;
@@ -310,6 +314,16 @@ public class MarkFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    //Обрабатываем скрытие клавиатуры при выходе из фрагмента
+    @Override
+    public void onPause() {
+        super.onPause();
+        //скрываем клавиатуру
+        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getView().getWindowToken(), 0);
+
     }
 
     private void refreshMarkList() {

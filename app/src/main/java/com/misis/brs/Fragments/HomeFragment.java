@@ -2,6 +2,8 @@ package com.misis.brs.Fragments;
 
 import android.app.Fragment;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,11 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 
 import com.misis.brs.Database.DBHelper;
 import com.misis.brs.Database.Mark;
@@ -27,6 +31,11 @@ public class HomeFragment extends Fragment {
     private Spinner semester;
     private SharedPreferences pref;
     private TextView score;
+    private CardView hint;
+    private TextView mark;
+    private ImageButton lamp;
+    private boolean hintIsOpen = false;
+
     @Override
     public void onResume() {
         super.onResume();
@@ -35,6 +44,8 @@ public class HomeFragment extends Fragment {
         ((MainActivity) getActivity()).bottomMenuStick(1);
         //пересчитываем сумму оценок
         scoreSum();
+        //выставляем правильное значение оценки
+        mark.setText(getMark());
     }
 
     @Nullable
@@ -43,14 +54,44 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
         semester = (Spinner)getActivity().findViewById(R.id.semester_picker);
 
-        score = (TextView)view.findViewById(R.id.score_label);
+        score = (TextView) view.findViewById(R.id.score_label);
+
+        hint = (CardView) view.findViewById(R.id.hint);
+        mark = (TextView) view.findViewById(R.id.yourMark);
+        lamp = (ImageButton) view.findViewById(R.id.idea);
+
+        //скрываем подсказку
+        hint.setVisibility(View.GONE);
+        //ставим фон hint
+        Resources res = getResources();
+        Drawable background = res.getDrawable(R.drawable.hint_background);
+        hint.setBackground(background);
+
+        //ставим фон mark
+        background = res.getDrawable(R.drawable.circle_background);
+        mark.setBackground(background);
+        //выставляем правильное значение оценки
+        mark.setText(getMark());
+
+        //обрабатываем нажатие на иконку
+        lamp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(hintIsOpen){
+                    hint.setVisibility(View.GONE);
+                }else{
+                    hint.setVisibility(View.VISIBLE);
+                }
+                hintIsOpen = !hintIsOpen;
+            }
+        });
 
         //изменение toolbar
         ((TextView)getActivity().findViewById(R.id.toolbarText)).setText("");
         semester.setVisibility(View.VISIBLE);
 
         ArrayAdapter<?> adapter =
-                ArrayAdapter.createFromResource(getActivity(), R.array.semesters_list, android.R.layout.simple_spinner_item);
+                ArrayAdapter.createFromResource(getActivity(), R.array.semesters_list, R.layout.spinner_item);
         adapter.setDropDownViewResource(R.layout.view_semester_simple_dropdown_item);
         semester.setAdapter(adapter);
 
@@ -100,12 +141,29 @@ public class HomeFragment extends Fragment {
         String lang = Locale.getDefault().getDisplayLanguage();
         switch (lang){
             case "English":
-                score.setText("TOTAL SCORE\n" + sum + "/100");
+                score.setText("YOUR SCORE\n" + sum + "/100");
                 break;
             case "русский":
-                score.setText("СУММА БАЛЛОВ\n" + sum + "/100");
+                score.setText("ВАШИ БАЛЛЫ\n" + sum + "/100");
                 break;
         }
 
+    }
+
+    private String getMark(){
+        int sum=0;
+        pref = getActivity().getApplicationContext().getSharedPreferences("Prefs", 0);
+        Mark [] marks = DBHelper.selectMarksForSemester(pref.getInt("semester",1));
+        if (marks != null) {
+            for (int i = 0; i <marks.length ; i++) {
+                sum+=marks[i].getMark();
+            }
+        }
+        if(sum == 0) return "0";
+        if(sum >  0  && sum <= 50) return "2";
+        if(sum >= 51 && sum <= 69) return "3";
+        if(sum >= 70 && sum <= 84) return "4";
+        if(sum >= 85) return "5";
+        return "0";
     }
 }

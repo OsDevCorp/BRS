@@ -1,11 +1,14 @@
 <resources>
-    <string name="app_name">BRS</string>
+    <string name="app_name">iGrade</string>
     <string name="side_menu_news">News</string>
     <string name="side_menu_contacts">Contacts</string>
     <string name="side_menu_bug_report">Bug report</string>
-    <string name="side_menu_help">Help</string>
+    <string name="side_menu_help">Updates</string>
     <string name="side_menu_settings">Settings</string>
-    <string name="teacher">Teacher:</string>
+    <string name="student_s_name">Student`s name</string>
+    <string name="group">Group</string>
+    <string name="teacher">Lecturer:</string>
+    <string name="teacher1">Lecturer</string>
     <string name="schedule">Schedule:</string>
     <string name="read_more">Read more</string>
     <string name="email">english@misis.ru</string>
@@ -30,16 +33,16 @@
     </string-array>
 
     <string-array name="semesters_list">
-        <item>1st semester</item>
-        <item>2nd semester</item>
-        <item>3d semester</item>
-        <item>4th semester</item>
-        <item>5th semester</item>
-        <item>6th semester</item>
-        <item>7th semester</item>
-        <item>8th semester</item>
-        <item>9th semester</item>
-        <item>10th semester</item>
+        <item>1 semester</item>
+        <item>2 semester</item>
+        <item>3 semester</item>
+        <item>4 semester</item>
+        <item>5 semester</item>
+        <item>6 semester</item>
+        <item>7 semester</item>
+        <item>8 semester</item>
+        <item>9 semester</item>
+        <item>10 semester</item>
     </string-array>
 
     <string-array name="types_of_marks_list_even">
@@ -64,12 +67,23 @@
         <item>Final Test/IELTS</item>
     </string-array>
 
+    <string-array name="days_of_week">
+        <item>Mon</item>
+        <item>Tues</item>
+        <item>Wed</item>
+        <item>Thurs</item>
+        <item>Fri</item>
+        <item>Sat</item>
+        <item>Sun</item>
+    </string-array>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="news_toolbar">NEWS</string>
     <string name="contacts_toolbar">CONTACTS</string>
     <string name="settings_toolbar">SETTINGS</string>
+    <string name="bug_report">BUG REPORT</string>
     <string name="message">Confirm delete?</string>
     <string name="accept">Yes</string>
     <string name="reject">No</string>
@@ -83,5 +97,56 @@
     <string name="snackbarLimitCount">Limit exceeded the number of evaluations of this type.</string>
     <string name="snackbarLimitPoints">Limit for the number of points for this type of assessment.</string>
     <string name="snackbarEmptyText">Hometask is empty</string>
+    <string name="snackbarSave">Changes saved</string>
+    <string name="snackbarNoOnline">No internet connection</string>
+
+    <string name="CalendarBatton">Add new task</string>
+    <string name="side_menu_updates">UPDATES</string>
+    <string name="what_s_new">What\'s New?</string>
+    <string name="version_history">Version History</string>
+    <string name="day_3">Day 3</string>
+    <string name="day_2">Day 2</string>
+    <string name="day_1">Day 1</string>
+    <string name="hintSchedule">Lecture room</string>
+    <string name="hintFIO">Add FIO</string>
+    <string name="hintGroup">Add group</string>
+    <string name="teacherName">Ivanov Ivan Ivanovich</string>
+    <string name="scheduleExample">Monday 1024 \nTuesday 1020A \nFriday 1024</string>
+    <string name="yourMark">Your mark</string>
+
+    <string name="mark_0"><![CDATA[Mark 0 – 0 points]]></string>
+    <string name="mark_2"><![CDATA[Mark 2 – 1–50 points]]></string>
+    <string name="mark_3"><![CDATA[Mark 3 – 51–69 points]]></string>
+    <string name="mark_4"><![CDATA[Mark 4 – 70–84 points]]></string>
+    <string name="mark_5"><![CDATA[Mark 5 - >84 points]]></string>
+
+    <string-array name="update_news">
+        <item>"Added functionality:
+		Points:
+			Record points for each semester separately (on the main screen you need to select the current semester)
+			Select the type of points and check the correctness of the input
+			Delete by long press on the points
+			Calculation of points and conversion to evaluation
+            You can see the translation criterion by clicking on the light
+		Home tasks:
+			Adding home task with a date selection (you can add only one task for one day)
+			Edit and view your home task with a short press
+			Ability to mark a task as completed
+			Deletion by long press
+			Displays upcoming tasks unchecked when creating a new record
+		Sidebar:
+			The tab with the contacts of the faculty
+			Feedback tab (We welcome Your suggestions for new functionality and error messages or incorrect behavior of the application)
+			The settings tab allows you to enter useful information that is displayed in the header of the side menu"	</item>
+    </string-array>
+
+    <string-array name="versions">
+        <item>0.1.0</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>01.09.2019</item>
+    </string-array>
+
 </resources>
 

@@ -1,68 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
+    android:id="@+id/taskCard"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="66dp"
     card_view:cardCornerRadius="5dp"
-    card_view:cardBackgroundColor="@color/colorTaskItemBackground"
+    card_view:cardBackgroundColor="@color/colorTaskItemBackgroundNoCheck"
     android:layout_marginLeft="4dp"
     android:layout_marginTop="4dp"
     android:layout_marginRight="4dp"
     android:layout_marginBottom="4dp"
     >
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/taskText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/robotoregular"
+            android:maxLines="1"
+            android:text="Writing a blog"
+            android:textColor="@color/colorTextTaskNoCheck"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/taskDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="25.09.19"
+            android:textColor="@color/colorTextTaskNoCheck"
+            android:textSize="18sp"
+            card_view:layout_constraintStart_toStartOf="@+id/taskText"
+            card_view:layout_constraintTop_toBottomOf="@+id/taskText" />
 
         <LinearLayout
-            android:layout_width="280dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="11dp"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/taskText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="Roboto"
-                android:maxLines="1"
-                android:text="Writing a blog"
-                android:textColor="@color/colorTextTask"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/taskDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="Roboto"
-                android:text="25.09.19"
-                android:textColor="@color/colorTextTask"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <!--android:focusable="false"
-            android:focusableInTouchMode="false"
-            нужны для того, чтобы работало нажатие на элемент-->
-        <CheckBox
-            android:id="@+id/notification"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_gravity="center_vertical"
-            android:layout_width="28dp"
-            android:layout_height="66dp"
-            android:button="@drawable/selector_notification"/>
-
-        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="66dp"
             android:layout_height="match_parent"
-            android:background="@color/colorDoneCheckBoxBackground">
+            android:background="@color/colorDoneCheckBoxBackground"
+            card_view:layout_constraintEnd_toEndOf="parent">
 
             <!--android:focusable="false"
                 android:focusableInTouchMode="false"
@@ -78,6 +65,5 @@
                 android:focusableInTouchMode="false" />
 
         </LinearLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -5,27 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- атрибут gravity делает начало записи текста с левого верхнего угла EditText-->
     <EditText
         android:id="@+id/textHometask"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:gravity="top|start"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="17dp"
         android:layout_marginStart="17dp"
-        android:fontFamily="Roboto"
+        android:fontFamily="@font/robotoregular"
         android:textColor="@color/colorTextFragment"
         android:textSize="18sp"
+        android:inputType="textCapSentences|textAutoCorrect"
         app:layout_constraintBottom_toTopOf="@+id/saveButton"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="105dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/shape_button"
-        android:fontFamily="Roboto"
+        android:fontFamily="@font/robotoregular"
         android:text="@string/save"
         android:textColor="@color/colorTextButton"
         android:textSize="14sp"

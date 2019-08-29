@@ -16,7 +16,7 @@ import java.util.Vector;
 public class NewsViewAdapter extends BaseAdapter{
 
     private Context context;
-    private Vector<News> news;
+    private static Vector<News> news;
 
     public NewsViewAdapter(Context context, Vector<News> news){
         this.context = context;
@@ -26,6 +26,10 @@ public class NewsViewAdapter extends BaseAdapter{
     @Override
     public int getCount() {
         return news.size();
+    }
+
+    public static void setNews(Vector<News> news) {
+        NewsViewAdapter.news = news;
     }
 
     @Override

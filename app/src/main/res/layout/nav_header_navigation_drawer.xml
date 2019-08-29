@@ -19,9 +19,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:srcCompat="@drawable/ic_student_avatar" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
-                android:text="student`s name"
+                android:text="@string/student_s_name"
                 android:fontFamily="@font/robotoregular"
                 android:textSize="13sp"
                 android:textStyle="bold"
@@ -41,8 +41,8 @@
 
             <ImageButton
                 android:id="@+id/extraInfoButton"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:layout_alignParentEnd="true"
                 android:background="#00FFFFFF"
                 android:scaleType="fitCenter"
@@ -55,7 +55,7 @@
             android:id="@+id/userGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="group"
+            android:text="@string/group"
             android:fontFamily="@font/robotoregular"
             android:textSize="13sp"
             android:textColor="@color/colorStudentsGroup"/>
@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="Ivanov Ivan Ivanovich"
+            android:text="@string/teacherName"
             android:fontFamily="@font/robotoregular"
             android:textSize="13sp"
             android:textColor="@color/colorTextExtraInfoUpdated" />
@@ -110,7 +110,7 @@
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Monday 1024\nTuesday 1020A\nFriday 1024"
+            android:text="@string/scheduleExample"
             android:fontFamily="@font/robotoregular"
             android:textSize="13sp"
             android:textColor="@color/colorTextExtraInfoUpdated" />

@@ -11,7 +11,6 @@ public class News {
     @NonNull
     @PrimaryKey()
     private String description;
-    //TODO поле для хранения картинок
 
     public long getDateNews() {
         return dateNews;

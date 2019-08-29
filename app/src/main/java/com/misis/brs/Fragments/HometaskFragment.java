@@ -36,8 +36,7 @@ public class HometaskFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        //TODO раскомментировать после добавки сохранения в бд
-        //refreshHometaskList();
+        refreshHometaskList();
         ((MainActivity) getActivity()).bottomMenuStick(3);
 
     }
@@ -56,20 +55,12 @@ public class HometaskFragment extends Fragment {
 
         //обработка адаптер. Выводим спиоск дз при создании вида
         final Vector<Hometask> hometasks = new Vector<>();
-        Hometask ht = new Hometask(1564351428);
-        ht.setCheckDone(false);
-        ht.setCheckNotify(true);
-        ht.setDescription("Writing Blog");
-
-        hometasks.add(ht);
-
-        //TODO раскомментировать после добавления создания дз
-        /*SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("Prefs", 0);
+        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("Prefs", 0);
         Hometask[] bdHometasks = DBHelper.selectHometaskForSemester(pref.getInt("semester",0));
         if (bdHometasks != null) {
             hometasks.addAll(Arrays.asList(bdHometasks));
         }
-        */
+
         hometasksViewAdapter = new HometaskViewAdapter(getActivity(),hometasks);
         hometaskList.setAdapter(hometasksViewAdapter);
         //удаление по долгому нажатию
@@ -84,10 +75,9 @@ public class HometaskFragment extends Fragment {
                 builder.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //TODO раскомментировать после добавки сохранения в бд
-                        //DBHelper.deleteHometaskByDeadline(((Hometask)hometasksViewAdapter.getItem(position)).getDeadline());
+                        DBHelper.deleteHometaskByDeadline(((Hometask)hometasksViewAdapter.getItem(position)).getDeadline());
                         //обновляем список
-                        //refreshHometaskList();
+                        refreshHometaskList();
                     }
                 });
                 //не удадяем запись
@@ -128,7 +118,8 @@ public class HometaskFragment extends Fragment {
         addHometask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                CalendarHometaskFragment chf = new CalendarHometaskFragment();
+                ((MainActivity) getActivity()).replaceFragment(R.id.themaincontainer,chf);
             }
         });
         return view;
